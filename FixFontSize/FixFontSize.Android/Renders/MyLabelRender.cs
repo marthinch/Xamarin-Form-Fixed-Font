@@ -15,6 +15,7 @@ namespace FixFontSize.Droid.Renders
 
         }
 
+        [Obsolete]
         protected override void OnElementChanged(ElementChangedEventArgs<Label> e)
         {
             base.OnElementChanged(e);
@@ -32,7 +33,7 @@ namespace FixFontSize.Droid.Renders
 
                 // This will set font family & font attribute
                 Typeface font = Typeface.CreateFromAsset(Forms.Context.Assets, "Qdbettercomicsansalternates-z8823.ttf");
-                Control.SetTypeface(Typeface.SansSerif, TypefaceStyle.Bold);
+                Control.SetTypeface(font, TypefaceStyle.Bold);
             }
         }
     }
