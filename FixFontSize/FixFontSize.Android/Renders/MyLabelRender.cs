@@ -10,12 +10,13 @@ namespace FixFontSize.Droid.Renders
 {
     public class MyLabelRender : LabelRenderer
     {
+        Context context;
+
         public MyLabelRender(Context context) : base(context)
         {
-
+            this.context = context;
         }
 
-        [Obsolete]
         protected override void OnElementChanged(ElementChangedEventArgs<Label> e)
         {
             base.OnElementChanged(e);
@@ -32,7 +33,7 @@ namespace FixFontSize.Droid.Renders
                 Control.SetTextSize(Android.Util.ComplexUnitType.Dip, (float)12.0);
 
                 // This will set font family & font attribute
-                Typeface font = Typeface.CreateFromAsset(Forms.Context.Assets, "Qdbettercomicsansalternates-z8823.ttf");
+                Typeface font = Typeface.CreateFromAsset(context.Assets, "Qdbettercomicsansalternates-z8823.ttf");
                 Control.SetTypeface(font, TypefaceStyle.Bold);
             }
         }
